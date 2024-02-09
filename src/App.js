@@ -1,9 +1,11 @@
 import { AppRoutes } from "./routes/route";
-import "./assets/styles/reset.sass"
+import { SelectedPageProvider } from "./context/selected-bar";
+import "./assets/styles/reset.sass";
+
 export const App = () => {
 	return (
-		<>
+		<SelectedPageProvider>
 			<AppRoutes />
-		</>
+		</SelectedPageProvider>
 	);
 }
