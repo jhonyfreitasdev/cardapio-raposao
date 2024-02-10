@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { selectedPageContext } from "../../context/selected-bar";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBeer, faHamburger, faMartiniGlassCitrus, } from '@fortawesome/free-solid-svg-icons';
 import { images } from "../../objects/images";
 import "./index.sass";
 
