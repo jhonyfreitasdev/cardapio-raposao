@@ -1,4 +1,6 @@
-.nav-bar 
+@import "../../assets/styles/keyframes"
+
+.nav-bar
     display: flex
     flex-direction: column
     align-items: center
@@ -9,3 +11,17 @@
 
     .nav-bar-logo
         width: 30px
+
+    .nav-bar-list
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        margin-top: 20px
+
+        .item a i
+            font-size: 28px
+            margin: 12px 0
+            text-shadow: 5px 5px 5px #00000099
+            transform: translateY(0px)
+            animation: levitate 1.5s ease-in-out infinite

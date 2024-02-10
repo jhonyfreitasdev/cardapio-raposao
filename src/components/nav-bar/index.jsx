@@ -1,15 +1,37 @@
 import { Link } from "react-router-dom"
-import logo from "../../assets/images/favico-raposao.jpg"
-import "./index.sass"
+import { useContext } from "react";
+import { selectedPageContext } from "../../context/selected-bar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBeer, faHamburger, faMartiniGlassCitrus, } from '@fortawesome/free-solid-svg-icons';
+import { images } from "../../objects/images";
+import "./index.sass";
 
 export const NavBar = () => {
-    return (
-        <div className="nav-bar"> 
-            <Link to="/"><img className="nav-bar-logo" src={logo} alt="Imagem do logo" /></Link>
+    const { setPage } = useContext(selectedPageContext);
 
-            <ul>
-                <li></li>
+    return (
+        <div className="nav-bar">
+            <Link to="/">
+                <img className="nav-bar-logo" src={images.favicon} alt="Imagem do logo" />
+            </Link>
+
+            <ul className="nav-bar-list">
+                <li className="item">
+                    <Link to="/food" onClick={() => setPage('food')}>
+                        <i class="fa-solid fa-burger"></i>
+                    </Link>
+                </li>
+                <li className="item">
+                    <Link to="/chopp" onClick={() => setPage('chopp')}>
+                        <i class="fa-solid fa-beer-mug-empty"></i>
+                    </Link>
+                </li>
+                <li className="item">
+                    <Link to="/drink" onClick={() => setPage('drink')}>
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                    </Link>
+                </li>
             </ul>
         </div>
     )
-}
+};
